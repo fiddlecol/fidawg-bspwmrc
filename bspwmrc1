@@ -17,6 +17,7 @@ feh --bg-max --no-fehbg --randomize ~/Pictures/
 
 bspc monitor -d I II III IV V VI VII VIII 
 bspc monitor HDMI-1 -d IX X
+bspc monitor VGA-1 -d IX X
 
 bspc config border_width         1
 bspc config window_gap           1
