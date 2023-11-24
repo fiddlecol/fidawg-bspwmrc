@@ -51,3 +51,5 @@ xsetroot -cursor_name left_ptr
 
 # for battery
 xfce4-power-manager &
+
+picom --config ~/.config/picom.conf &
