@@ -1,12 +1,7 @@
 #! /bin/sh
 
-# Set the external monitor using xrandr
-xrandr --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal 
-       --output VGA-1 --mode 1024x768 --pos 1366x0 --rotate normal 
-       --output DP-1 --off 
-       --output HDMI-1 --off 
-       --output DP-2 --off 
-       --output HDMI-2 --off
+#set the external monitor using xrandr
+xrandr --output eDP-1 --primary --mode 1366x768 --rotate normal --output VGA-1 --mode 1024x768 --right-of eDP1  
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
@@ -34,11 +29,13 @@ bspc config presel_feedback_color "#6272a4"
 
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
+bspc rule -a Thunar desktop='^2'
+bspc rule -a Telegram-desktop desktop='^7'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
  
+
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -51,5 +48,4 @@ xsetroot -cursor_name left_ptr
 
 # for battery
 xfce4-power-manager &
-
 picom --config ~/.config/picom.conf &
